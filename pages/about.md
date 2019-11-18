@@ -35,3 +35,5 @@ In 2018 I found that what makes me happy is to have hands on technology and not 
 <div class="row">
 {% include about/timeline.html %}
 </div>
+
+A special thanks to the project [portfolYOU](https://github.com/YoussefRaafatNasry/portfolYOU) for this Jekyll/GitHub Pages template.
