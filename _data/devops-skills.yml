@@ -1,0 +1,28 @@
+- name: Docker
+  percentage: 98
+  color: info
+
+- name: CI/CD
+  percentage: 95
+  color: success
+
+- name: ELK Stack (Elastic)
+  percentage: 95
+  color: success
+
+- name: Prometheus/Grafana
+  percentage: 85
+  color: success
+
+- name: Ansible
+  percentage: 85
+  color: warning
+
+- name: Kubernetes
+  percentage: 75
+  color: warning
+
+- name: Terraform/Vagrant
+  percentage: 75
+  color: warning
+

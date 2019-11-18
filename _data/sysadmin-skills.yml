@@ -1,0 +1,17 @@
+- name: Linux
+  percentage: 98
+  color: danger
+
+- name: Networking
+  percentage: 98
+  color: dark
+
+- name: Windows Server
+  percentage: 85
+  color:
+
+- name: Bash/Shell
+  percentage: 85
+  color: dark
+
+
