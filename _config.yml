@@ -33,12 +33,12 @@ author:
 # youtube           : your_channel_name
 
 ### Pagination ###
-paginate: 6
-paginate_path: "/articles/page-:num/"
+#paginate: 6
+#paginate_path: "/articles/page-:num/"
 
 
 ### Posts Permalink ###
-permalink: articles/:title
+#permalink: articles/:title
 
 
 ### Collections ###
