@@ -1,9 +1,9 @@
 ### Site Settings ###
 title               : Daniel Costa
 description         :                                # >- means to ignore newlines until "url:"
-                      Welcome to my Tech-Blog,
-                      I am a Father, Geek, In love with life!
-                      In this blog you will find articles about DevOps, Development, IT, and Home Automation...
+                      Welcome to my Tech-Blog,<br/>
+                      I am a Father/Geek! A guy that loves technology! I try to automate everything!<br/>
+                      In this blog you will find articles about DevOps, Development, IT, and Home Automation!
 
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
 baseurl             : ""                    # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
