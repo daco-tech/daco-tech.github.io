@@ -2,7 +2,8 @@
 title               : Daniel Costa
 description         :                                # >- means to ignore newlines until "url:"
                       Welcome to my Tech-Blog,<br/>
-                      I am a Father/Geek! A guy that loves technology! I try to automate everything!<br/>
+                      <b>I am a Father/Geek, and a guy that loves technology!</b><br/>
+                      I try to automate everything!<br/><br/>
                       In this blog you will find articles about DevOps, Development, IT, and Home Automation!
 
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
