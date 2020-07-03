@@ -1,6 +1,11 @@
+- title: IT Ops Champion & Scrum Knight <br/>CriticalTechWorks (a BMW Group company)
+  from: 2020
+  to: present
+  description: (...)
+
 - title: Senior DevOps Engineer <br/>PROZIS, PT
   from: 2018
-  to: present
+  to: 2020
   description: Maintain and support the GIT environment and process.<br/>
                Implement Continuous Integration and Continuous Deployment using GitLab-CI.<br/>
                Monitoring with Prometheus, and Log Centralization using ElasticSearch.<br/>
