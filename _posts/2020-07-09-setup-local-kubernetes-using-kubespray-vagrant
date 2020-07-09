@@ -1,0 +1,186 @@
+---
+title: Setup Local Kubernetes using Vagrant and Kubespray
+tags: [Kubernetes, Kubespray, Mac, Vagrant, Virtualbox]
+style: 
+color: 
+description: My Local MacBook Kubernetes Lab setup using kubespray and vagrant (virtualbox)
+---
+
+
+# Plan your setup
+
+Since I am preparing my local laptop lab, my setup will include:
+
+- 3 Virtualbox VM's (512Mb RAM)
+- 2 Masters;
+- 3 EtcD;
+- 3 Workers;
+
+
+Total Memory: 1,5 Gb;
+Total vCPU's: 6;
+
+# Prepare
+
+Clone Kubespray
+
+``` bash
+git clone https://github.com/kubernetes-sigs/kubespray.git
+```
+
+Then checkout a tag version (check TAGs: https://github.com/kubernetes-sigs/kubespray/tags)
+ 
+I am using: v2.13.2
+
+``` bash
+cd kubespray
+git checkout v2.13.2
+```
+
+Check requirements:
+
+Since I am using Mac, I need to check Python3 version by using:
+
+First prepare Mac to add Python3 and Pip3:
+
+```
+brew install python3
+brew postinstall python3
+curl -O https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+```
+
+Check installed versions
+```
+python3 --version
+pip3 --version
+```
+
+My versions are:
+| Tool    | Version |
+|---------|---------|
+| Python3 | 3.8.3   |
+| Pip3    | 20.1.1  |
+
+Check and install the requirements needed:
+
+``` bash
+cat requirements.txt
+pip3 install -r requirements.txt
+```
+
+# Check your configuration
+
+First check your Vagrantfile:
+
+```
+nano Vagrantfile
+```
+
+At least set cpu no to 2:
+
+	$vm_cpus ||= 2
+
+And set memory according to your available machine memory:
+
+	$vm_memory (by default 2Gb)
+
+# Run!
+
+```
+vagrant up
+```
+
+# Copy configuration to admin kubernetes
+
+```
+mkdir ~/.kube
+cp inventory/sample/artifacts/admin.conf ~/.kube/config
+```
+
+# Check everything is running:
+
+```
+kubectl cluster-info
+kubectl version --short
+kubectl get nodes -o wide
+kubectl get cs
+kubectl get ns
+kubectl -n kube-system get all
+```
+
+
+# Check if network is running as well:
+
+First check that nothing is running:
+
+```
+kubectl get all
+```
+
+Run nginx with 3 replicas
+
+```
+kubectl run nginx --image nginx --replicas 3
+```
+
+Check and wait until all 3 replicas are running
+
+```
+kubectl get all -o wide
+```
+
+After all 3 replicas are running, connect to one of them by using:
+
+```
+kubectl exec -it nginx-6db489d4b7-bcjrl -- bash
+```
+
+Replace *nginx-6db489d4b7-bcjrl* with your container identifier.
+
+Inside the container install ping, and test ping all the other containers IP addresses found with *kubectl get all -o wide*.
+
+```
+apt update
+apt install -y iputils-ping
+hostname -i
+ping <ip other container>
+```
+
+If you can ping, your flannel network is OK!
+
+Cleanup
+
+```
+kubectl delete deploy nginx
+```
+
+# Setup kubernetes dashboard
+
+First get the token
+
+```
+kubectl create -f contrib/misc/clusteradmin-rbac.yml
+kubectl -n kube-system describe secret kubernetes-dashboard-token | grep 'token:' | grep -o '[^ ]\+$'
+```
+
+Copy the token
+
+Proxy dashboard
+
+```
+kubectl proxy
+```
+
+Access using the above URL (adapt the port if needed):
+http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/login
+
+Use token to login.
+
+
+
+# Credits:
+
+https://github.com/kubernetes-sigs/kubespray/blob/master/docs/vagrant.md
+
+
