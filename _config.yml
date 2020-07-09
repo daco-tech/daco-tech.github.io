@@ -39,7 +39,7 @@ author:
 
 
 ### Posts Permalink ###
-permalink: articles/:title
+#permalink: articles/:title
 
 
 ### Collections ###
@@ -47,6 +47,7 @@ collections:
   projects:
     output: true
     permalink: /projects/:name
+
 
 
 
