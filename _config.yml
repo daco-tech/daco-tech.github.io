@@ -47,6 +47,11 @@ collections:
   projects:
     output: true
     permalink: /projects/:name
+  blog:
+    output: true
+    permalink: /blog/:title
+
+
 
 
 ### Defaults for collections ###
