@@ -2,9 +2,11 @@
 title               : Daniel Costa
 description         :                                # >- means to ignore newlines until "url:"
                       Welcome to my Tech-Blog,<br/>
-                      <b>I am a Father/Geek, and a guy that loves technology!</b><br/>
-                      I try to automate everything!<br/><br/>
-                      In this blog you will find articles about DevOps, Development, IT, and Home Automation!
+                      Hello!<br />
+                      My name is Daniel Costa, I'm from Porto, Portugal. 
+                      <b>In a short description I dedicated Father, a Geek and a guy who loves to ride their motorcycle.</b><br/>
+                      I automate everything! From my day to day work, my house, and even my laptops setup.<br/><br/>
+                      In this blog you will find articles about DevOps, Development, IT, and Home Automation! Hope you enjoy and send me some feedback.
 
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
 baseurl             : ""                    # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
