@@ -1,14 +1,13 @@
 ### Site Settings ###
 title               : Daniel Costa
 description         :                                # >- means to ignore newlines until "url:"
-                      Welcome to my Tech-Blog,<br/>
-                      Hello!<br />
-                      My name is Daniel Costa, I'm from Porto, Portugal. 
+                      Welcome,<br/>
+                     
+                      My name is Daniel Costa. 
                       <br />
-                      <b>In a short description I am a dedicated Father, a Geek and a guy who loves to ride their motorcycle.</b><br/>
+                      <b>I'm a Dedicated Father, Geek and a motorcycle rider.</b><br/>
                       <br />
-                      I automate everything! From my day to day work, my house, and even my laptops setup.<br/><br/>
-                      In this blog you will find articles about DevOps, Development, IT, and Home Automation! Hope you enjoy and send me some feedback.
+                      I automate everything! 
 
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
 baseurl             : ""                    # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
